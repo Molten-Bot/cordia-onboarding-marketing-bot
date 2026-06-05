@@ -1,6 +1,6 @@
-# Cordia Web Blank
+# Onboarding Marketing Bot
 
-Static browser-only web app template for fast downstream customization.
+Static browser-only Cordia app for shaping a 7-day welcome email sequence. Release 0 includes one onboarding email per day, live preview, local autosave, copy, reset, theme selection, and JSON export.
 
 ## Structure
 
@@ -8,8 +8,9 @@ Static browser-only web app template for fast downstream customization.
 - `public/global.css` - global styling
 - `src/app.ts` - typed browser-only application source
 - `public/app.js` - compiled browser application logic
-- `public/_redirects` - Cloudflare Pages SPA fallback
+- `public/_redirects` - static-host SPA fallback
 - `public/_headers` - basic static security headers
+- `public/release.json` - deployed release marker
 
 ## Run locally
 
@@ -23,11 +24,11 @@ python3 -m http.server 4173 --directory public
 
 Then open `http://localhost:4173`.
 
-## Deploy on Cloudflare Pages
+## Deploy
 
-Use these project settings:
+Use these static-host settings:
 
 - Build command: `npm run build`
 - Build output directory: `public`
 
-This template does not require bundling or server functions.
+This app does not require bundling or server functions.
