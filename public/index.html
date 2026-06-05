@@ -6,9 +6,9 @@
     <meta name="color-scheme" content="light dark">
     <meta
       name="description"
-      content="A small browser-only web application template ready for static hosting."
+      content="Cordia onboarding marketing bot for a 7-day welcome email flow."
     >
-    <title>Cordia App Template</title>
+    <title>Onboarding Marketing Bot for Cordia</title>
     <link rel="author" href="/humans.txt" type="text/plain">
     <link rel="alternate" href="/llm.txt" type="text/plain" title="LLM-readable site information">
     <link rel="stylesheet" href="/global.css">
@@ -21,12 +21,13 @@
     <div class="app-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Browser app template</p>
-          <h1>Cordia</h1>
+          <p class="eyebrow">Cordia release 0</p>
+          <h1>Onboarding Marketing Bot</h1>
         </div>
         <nav class="nav" aria-label="Primary">
           <a href="#overview" aria-current="page">Overview</a>
-          <a href="#workspace">Workspace</a>
+          <a href="#flow">Flow</a>
+          <a href="#composer">Composer</a>
           <a href="#settings">Settings</a>
         </nav>
       </header>
@@ -34,94 +35,117 @@
       <main id="main">
         <section class="hero" id="overview" aria-labelledby="hero-title">
           <div class="hero-copy">
-            <p class="eyebrow">Static hosting ready starter</p>
-            <h2 id="hero-title">A clean starting point for browser-only apps.</h2>
+            <p class="eyebrow">7 days | 1 email per day</p>
+            <h2 id="hero-title">Cordia welcome flow, ready to shape.</h2>
             <p>
-              Customize the data model, views, and actions without introducing a
-              build pipeline. State is local by default, markup stays plain, and
-              assets live in one deployable folder.
+              Build a practical first-week onboarding sequence for new Cordia users:
+              welcome, activation, team setup, guidance, review, automation, and repeatability.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#workspace">Open workspace</a>
-              <a class="button secondary" href="#settings">Edit settings</a>
+              <a class="button primary" href="#composer">Edit selected email</a>
+              <a class="button secondary" href="#flow">Review schedule</a>
             </div>
           </div>
-          <div class="status-panel" aria-label="Application status">
-            <div>
-              <span class="status-dot" aria-hidden="true"></span>
-              <span>Ready for customization</span>
+
+          <div class="flow-visual" aria-label="7-day email flow">
+            <div class="visual-track">
+              <span>Day 1</span>
+              <span>Day 2</span>
+              <span>Day 3</span>
+              <span>Day 4</span>
+              <span>Day 5</span>
+              <span>Day 6</span>
+              <span>Day 7</span>
             </div>
-            <strong id="item-count">0</strong>
-            <span>saved items</span>
+            <div class="visual-card">
+              <span class="status-dot" aria-hidden="true"></span>
+              <strong id="flow-count">7</strong>
+              <span>emails scheduled</span>
+            </div>
           </div>
         </section>
 
-        <section class="section-grid" id="workspace" aria-labelledby="workspace-title">
-          <div class="panel workspace-panel">
+        <section class="section-grid" id="flow" aria-labelledby="flow-title">
+          <div class="panel flow-panel">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">Workspace</p>
-                <h2 id="workspace-title">Starter list</h2>
+                <p class="eyebrow">Daily sequence</p>
+                <h2 id="flow-title">Select a day</h2>
               </div>
-              <button class="button secondary" id="clear-items" type="button">Clear done</button>
+              <span class="save-state" id="save-state" role="status">Saved locally</span>
             </div>
-
-            <form class="item-form" id="item-form">
-              <label for="item-input">New item</label>
-              <div class="input-row">
-                <input
-                  id="item-input"
-                  name="item"
-                  type="text"
-                  autocomplete="off"
-                  maxlength="80"
-                  placeholder="Add a task, note, or placeholder record"
-                  required
-                >
-                <button class="button primary" type="submit">Add</button>
-              </div>
-            </form>
-
-            <ul class="item-list" id="item-list" aria-live="polite"></ul>
+            <div class="day-buttons" id="day-buttons" aria-label="Email schedule"></div>
           </div>
 
-          <aside class="panel" aria-labelledby="snapshot-title">
-            <p class="eyebrow">Snapshot</p>
-            <h2 id="snapshot-title">Template pieces</h2>
-            <dl class="stat-list">
-              <div>
-                <dt>Runtime</dt>
-                <dd>Browser only</dd>
-              </div>
-              <div>
-                <dt>Deploy folder</dt>
-                <dd><code>public</code></dd>
-              </div>
-              <div>
-                <dt>Styles</dt>
-                <dd><code>global.css</code></dd>
-              </div>
-              <div>
-                <dt>Script</dt>
-                <dd><code>app.js</code></dd>
-              </div>
-            </dl>
+          <aside class="panel preview-panel" aria-labelledby="preview-title">
+            <p class="eyebrow" id="day-number">Day 1</p>
+            <h2 id="preview-title">Live email preview</h2>
+            <article class="email-preview">
+              <p class="mail-label">Subject</p>
+              <h3 id="preview-subject"></h3>
+              <p class="mail-label">Message</p>
+              <p id="preview-body"></p>
+              <a class="button primary" id="preview-cta" href="https://cordia.molten.bot"></a>
+            </article>
           </aside>
+        </section>
+
+        <section class="panel composer-panel" id="composer" aria-labelledby="composer-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" id="selected-meta">warm tone | 1 email scheduled</p>
+              <h2 id="composer-title">Email composer</h2>
+            </div>
+            <div class="button-row">
+              <button class="button secondary" id="copy-email" type="button">Copy email</button>
+              <button class="button secondary" id="reset-flow" type="button">Reset flow</button>
+            </div>
+          </div>
+
+          <div class="composer-grid">
+            <label class="field">
+              <span>Subject</span>
+              <input id="email-subject" type="text" maxlength="120">
+            </label>
+
+            <label class="field">
+              <span>Tone</span>
+              <select id="email-tone">
+                <option value="warm">Warm</option>
+                <option value="direct">Direct</option>
+                <option value="celebratory">Celebratory</option>
+              </select>
+            </label>
+
+            <label class="field wide">
+              <span>Objective</span>
+              <textarea id="email-objective" rows="3"></textarea>
+            </label>
+
+            <label class="field wide">
+              <span>Email body</span>
+              <textarea id="email-body" rows="9"></textarea>
+            </label>
+
+            <label class="field">
+              <span>Call to action</span>
+              <input id="email-cta" type="text" maxlength="80">
+            </label>
+          </div>
         </section>
 
         <section class="panel settings-panel" id="settings" aria-labelledby="settings-title">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Settings</p>
-              <h2 id="settings-title">App preferences</h2>
+              <p class="eyebrow">Export</p>
+              <h2 id="settings-title">Campaign settings</h2>
             </div>
-            <span class="save-state" id="save-state" role="status">Saved locally</span>
           </div>
 
           <div class="settings-grid">
             <label class="field">
-              <span>App name</span>
-              <input id="app-name" type="text" maxlength="32" value="Cordia">
+              <span>Campaign name</span>
+              <input id="campaign-name" type="text" maxlength="64" value="Cordia 7-day welcome flow">
             </label>
 
             <label class="field">
@@ -133,6 +157,11 @@
               </select>
             </label>
           </div>
+
+          <label class="field export-field">
+            <span>Flow JSON</span>
+            <textarea id="export-output" rows="10" readonly></textarea>
+          </label>
         </section>
       </main>
 

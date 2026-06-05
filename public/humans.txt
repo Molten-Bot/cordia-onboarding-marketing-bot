@@ -7,7 +7,7 @@ Platform URL: https://molten.bot
 
 /* SITE */
 
-Name: Cordia App Template
-Description: Static browser-only web application template ready for static hosting.
+Name: Onboarding Marketing Bot
+Description: Static Cordia onboarding email flow builder for a 7-day welcome sequence.
 Language: English
 Standards: HTML, CSS, JavaScript

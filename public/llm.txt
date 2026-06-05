@@ -1,6 +1,6 @@
-# Cordia App Template
+# Onboarding Marketing Bot
 
-Cordia App Template is a static browser-only web application template ready for static hosting.
+Onboarding Marketing Bot is a static Cordia browser app for shaping a 7-day welcome email flow.
 
 Creator: cordia.molten.bot
 Creator URL: https://cordia.molten.bot
@@ -12,4 +12,4 @@ Primary files:
 - /global.css
 - /app.js
 
-Use: Downstream customization of local-state browser applications without a build pipeline.
+Use: Edit, preview, copy, and export one onboarding email per day for the first week after a user joins Cordia.
