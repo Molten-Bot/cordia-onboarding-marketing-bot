@@ -10,7 +10,6 @@ Static browser-only Cordia app for shaping a 7-day welcome email sequence. Relea
 - `public/app.js` - compiled browser application logic
 - `public/_redirects` - static-host SPA fallback
 - `public/_headers` - basic static security headers
-- `public/release.json` - deployed release marker
 
 ## Run locally
 

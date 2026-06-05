@@ -99,9 +99,3 @@ test("served files do not reference disallowed providers or tooling", async () =
     assert.doesNotMatch(content, /\bgit\b|cloudflare/i, file);
   }
 });
-
-test("release marker serves release 0 JSON", async () => {
-  const release = JSON.parse(await readFile("public/release.json", "utf8"));
-
-  assert.deepEqual(release, { release: "0" });
-});
