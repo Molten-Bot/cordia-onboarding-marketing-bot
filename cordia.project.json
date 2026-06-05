@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "generatedBy": "cordia",
+  "updatedAt": "2026-06-05T16:58:46.433Z",
+  "project": {
+    "id": "onboarding-marketing-bot",
+    "handle": "onboarding-marketing-bot",
+    "title": "Onboarding Marketing bot",
+    "summary": "make me an onboarding email flow for users that come to Cordia to welcome them to the platform. It should be a flow of 7 days, 1 email per day",
+    "url": "https://cordia.molten.bot/project/onboarding-marketing-bot"
+  },
+  "repo": {
+    "owner": "Molten-Bot",
+    "name": "cordia-onboarding-marketing-bot",
+    "fullName": "Molten-Bot/cordia-onboarding-marketing-bot"
+  }
+}
